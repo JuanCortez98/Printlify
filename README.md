@@ -28,11 +28,31 @@ Abre `http://localhost:3000`.
 2. Agrega las variables de entorno anteriores en `Config Vars`.
 3. Haz deploy del repo.
 
+Valores exactos para pegar en Heroku:
+
+- `STRIPE_SECRET_KEY` = tu clave secreta de Stripe, empieza con `sk_live_` o `sk_test_`.
+- `PAYPAL_CHECKOUT_URL` = enlace real de checkout de PayPal, normalmente el URL de un order o checkout creado en tu panel.
+- `MERCADOPAGO_CHECKOUT_URL` = enlace real de pago de Mercado Pago, normalmente el `init_point` o link de preferencia.
+- `CARD_CHECKOUT_URL` = déjalo vacío si vas a usar Stripe Checkout para tarjeta.
+
 ### Render
 
 1. Crea un Web Service desde el repo.
 2. Usa `npm start` como comando de inicio.
 3. Agrega las variables de entorno en el panel.
+
+Valores exactos para pegar en Render:
+
+- `STRIPE_SECRET_KEY` = tu clave secreta de Stripe.
+- `PAYPAL_CHECKOUT_URL` = tu enlace de pago de PayPal.
+- `MERCADOPAGO_CHECKOUT_URL` = tu enlace de pago de Mercado Pago.
+- `CARD_CHECKOUT_URL` = vacío si Stripe va a manejar tarjeta.
+
+Ruta de producción recomendada:
+
+- `https://tu-dominio.com/checkout/card` para tarjeta.
+- `https://tu-dominio.com/checkout/paypal` para PayPal.
+- `https://tu-dominio.com/checkout/mercado-pago` para Mercado Pago.
 
 ## Notas
 

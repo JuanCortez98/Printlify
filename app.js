@@ -136,7 +136,8 @@ function checkout() {
   }
 
   const method = getSelectedPaymentMethod();
-  const checkoutUrl = new URL(`/checkout/${method}`, window.location.origin);
+  const checkoutOrigin = window.location.protocol === 'file:' ? 'http://localhost:3000' : window.location.origin;
+  const checkoutUrl = new URL(`/checkout/${method}`, checkoutOrigin);
   checkoutUrl.searchParams.set('email', email);
   checkoutUrl.searchParams.set('currency', 'MXN');
   checkoutUrl.searchParams.set('amount', String(cart.reduce((sum, item) => sum + item.price * item.quantity, 0)));

@@ -6,7 +6,6 @@ const product = {
   description: '+5,000 recursos editables, acceso de por vida y descarga inmediata.'
 };
 
-const whatsappNumber = '33784710322';
 const cartDrawer = document.querySelector('.cart-drawer');
 const cartItems = document.getElementById('cart-items');
 const cartSubtotal = document.getElementById('cart-subtotal');
@@ -16,6 +15,7 @@ const checkoutButton = document.querySelector('.checkout-cart');
 const clearButton = document.querySelector('.clear-cart');
 const addToCartButton = document.querySelector('.add-to-cart');
 const paymentMethodInputs = document.querySelectorAll('input[name="payment-method"]');
+const checkoutEmailInput = document.getElementById('checkout-email');
 
 const storageKey = 'printlify-cart';
 
@@ -119,35 +119,28 @@ function clearCart() {
 
 function getSelectedPaymentMethod() {
   const checked = document.querySelector('input[name="payment-method"]:checked');
-  return checked ? checked.value : 'PayPal';
-}
-
-function buildCheckoutMessage() {
-  if (cart.length === 0) {
-    return 'Hola, quiero información sobre el Kit de Negocio Digital de Printlify.';
-  }
-
-  const lines = cart
-    .map((item) => `- ${item.name} x${item.quantity} (${formatCurrency(item.price * item.quantity)})`)
-    .join('\n');
-
-  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-
-  return [
-    'Hola, quiero hacer mi pedido de Printlify.',
-    '',
-    'Productos:',
-    lines,
-    '',
-    `Total: ${formatCurrency(total)}`,
-    `Método de pago: ${getSelectedPaymentMethod()}`,
-    'Mi correo para recibir el acceso es:'
-  ].join('\n');
+  return checked ? checked.value : 'paypal';
 }
 
 function checkout() {
-  const message = encodeURIComponent(buildCheckoutMessage());
-  window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank', 'noopener,noreferrer');
+  if (cart.length === 0) {
+    openCart();
+    return;
+  }
+
+  const email = checkoutEmailInput?.value.trim();
+  if (!email) {
+    checkoutEmailInput?.focus();
+    checkoutEmailInput?.reportValidity?.();
+    return;
+  }
+
+  const method = getSelectedPaymentMethod();
+  const checkoutUrl = new URL(`/checkout/${method}`, window.location.origin);
+  checkoutUrl.searchParams.set('email', email);
+  checkoutUrl.searchParams.set('currency', 'MXN');
+  checkoutUrl.searchParams.set('amount', String(cart.reduce((sum, item) => sum + item.price * item.quantity, 0)));
+  window.location.assign(checkoutUrl.toString());
 }
 
 openCartButtons.forEach((button) => button.addEventListener('click', openCart));

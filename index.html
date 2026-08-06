@@ -148,15 +148,15 @@
 						</article>
 
 						<article class="product" style="border:1px solid rgba(36,199,201,0.18); box-shadow: 0 22px 44px rgba(36,199,201,0.10);">
-							<div class="thumb"><span>💜</span></div>
-							<h3>Venta inteligente</h3>
-							<div class="price"><strong>WhatsApp</strong></div>
+							<div class="thumb"><span>💳</span></div>
+							<h3>Pago seguro</h3>
+							<div class="price"><strong>PayPal / Mercado Pago / tarjeta</strong></div>
 							<ul>
-								<li>Contacto directo al +33784710322</li>
-								<li>Mensaje listo para cerrar ventas</li>
-								<li>Botón de compra rápido</li>
+								<li>Checkout alojado y funcional</li>
+								<li>Pago con plataforma segura</li>
+								<li>Confirmación por correo</li>
 							</ul>
-							<a class="btn btn-secondary" href="https://wa.me/33784710322" target="_blank" rel="noreferrer">Escribir ahora</a>
+							<button class="btn btn-secondary open-cart" type="button">Abrir checkout</button>
 						</article>
 
 						<article class="product">
@@ -226,7 +226,7 @@
 
 				<div class="video-layout">
 					<div class="video-card reveal">
-						<video controls playsinline preload="none" poster="Printlify.jpg">
+						<video controls playsinline autoplay muted loop preload="metadata" poster="Printlify.jpg">
 							<source src="FDownloader.Net_AQPOqFtbu6AKUOs2SKC3_RimQVYrpGCuBJq_HHSSF3KSrNaqDr5yJBPy_BhZSKSW54YJft-1DnnBj7iWPZ1xoOJLT1HkbLGVOMxACPdcaFi6oQ_720p_%28HD%29.mp4" type="video/mp4" />
 							Tu navegador no soporta la reproducción de video.
 						</video>
@@ -260,13 +260,13 @@
 					</article>
 					<article class="step reveal delay-1">
 						<div class="step-number">2</div>
-						<h3>Escríbenos por WhatsApp</h3>
-						<p>El carrito genera un mensaje listo para enviar al número +33784710322.</p>
+						<h3>Elige tu método de pago</h3>
+						<p>Selecciona PayPal, Mercado Pago o tarjeta de crédito para ir a la pasarela segura.</p>
 					</article>
 					<article class="step reveal delay-2">
 						<div class="step-number">3</div>
 						<h3>Recibe tu acceso</h3>
-						<p>Después de confirmar tu compra, recibes tu archivo y el acceso al contenido digital.</p>
+						<p>Después de confirmar tu compra, recibes tu archivo y el acceso al contenido digital por correo.</p>
 					</article>
 				</div>
 			</div>
@@ -291,15 +291,15 @@
 					<article class="step step-wide reveal delay-1">
 						<div class="step-number">2</div>
 						<div>
-							<h3>Haz clic en pedir por WhatsApp</h3>
-							<p>Se abrirá un mensaje listo para enviar con tu pedido al número +33784710322.</p>
+							<h3>Haz clic en continuar al pago</h3>
+							<p>Se abrirá la pasarela segura según el método que elijas: PayPal, Mercado Pago o tarjeta de crédito.</p>
 						</div>
 					</article>
 					<article class="step step-wide reveal delay-2">
 						<div class="step-number">3</div>
 						<div>
 							<h3>Confirma y recibe tu acceso</h3>
-							<p>Tras confirmar el pago, recibirás tu archivo y el acceso al contenido digital.</p>
+							<p>Tras confirmar el pago, recibirás tu archivo y el acceso al contenido digital por correo.</p>
 						</div>
 					</article>
 				</div>
@@ -368,6 +368,7 @@
 				<div class="section-head">
 					<div>
 						<h2>Lo que dicen nuestros clientes.</h2>
+						<p class="section-hint">Desliza hacia la derecha para ver más opiniones.</p>
 					</div>
 				</div>
 
@@ -437,7 +438,7 @@
 					</div>
 					<div style="display:flex;flex-direction:column;gap:12px;min-width:240px;">
 						<button class="btn btn-primary open-cart" type="button">Abrir carrito</button>
-						<a class="btn btn-secondary" href="https://wa.me/33784710322" target="_blank" rel="noreferrer">Ir a WhatsApp</a>
+							<a class="btn btn-secondary" href="mailto:printlify123@gmail.com">Escribir por correo</a>
 					</div>
 				</div>
 			</div>
@@ -445,7 +446,8 @@
 	</main>
 
 	<div class="floating" aria-label="Acciones rápidas">
-		<a class="wa" href="https://wa.me/33784710322" target="_blank" rel="noreferrer" aria-label="Contactar por WhatsApp">✆</a>
+			<a class="wa" href="tel:+529995481209" aria-label="Llamar al teléfono de Printlify">✆</a>
+			<a class="fb" href="mailto:printlify123@gmail.com" aria-label="Escribir por correo">@</a>
 		<a class="fb" href="https://www.facebook.com/printlify" target="_blank" rel="noreferrer" aria-label="Ir a Facebook">f</a>
 		<a class="up" href="#inicio" aria-label="Volver al inicio">↑</a>
 	</div>
@@ -466,22 +468,27 @@
 				<div class="payment-methods">
 					<p class="payment-label">Método de pago</p>
 					<label class="payment-option">
-						<input type="radio" name="payment-method" value="PayPal" checked />
+						<input type="radio" name="payment-method" value="paypal" checked />
 						<span>PayPal</span>
 					</label>
 					<label class="payment-option">
-						<input type="radio" name="payment-method" value="Tarjeta de crédito" />
+						<input type="radio" name="payment-method" value="card" />
 						<span>Tarjeta de crédito</span>
 					</label>
 					<label class="payment-option">
-						<input type="radio" name="payment-method" value="Mercado Pago" />
+						<input type="radio" name="payment-method" value="mercado-pago" />
 						<span>Mercado Pago</span>
 					</label>
 				</div>
 				<div class="summary-row"><span>Subtotal</span><strong id="cart-subtotal">MX$0.00</strong></div>
-				<div class="summary-row"><span>WhatsApp</span><strong>+33784710322</strong></div>
-				<button class="btn btn-primary checkout-cart" type="button">Pedir por WhatsApp</button>
+				<div class="summary-row"><span>Teléfono</span><strong>+52 999 548 1209</strong></div>
+				<label class="checkout-field" for="checkout-email">
+					<span>Correo para el acceso</span>
+					<input id="checkout-email" type="email" placeholder="printlify123@gmail.com" autocomplete="email" />
+				</label>
+				<button class="btn btn-primary checkout-cart" type="button">Continuar al pago</button>
 				<button class="btn btn-secondary clear-cart" type="button">Vaciar carrito</button>
+				<p class="checkout-note">Serás redirigido a una pasarela segura según el método de pago seleccionado.</p>
 			</div>
 		</div>
 	</aside>
@@ -503,7 +510,8 @@
 			</div>
 			<div>
 				<h3>Contacto</h3>
-				<a href="https://wa.me/33784710322" target="_blank" rel="noreferrer">WhatsApp +33784710322</a>
+				<a href="tel:+529995481209">Teléfono +52 999 548 1209</a>
+				<a href="mailto:printlify123@gmail.com">printlify123@gmail.com</a>
 				<a href="https://www.facebook.com/printlify" target="_blank" rel="noreferrer">Facebook /printlify</a>
 			</div>
 		</div>
